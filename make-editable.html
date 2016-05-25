@@ -1,7 +1,6 @@
-<div class="content-holder">
-    <div class="content" ng-init="editableStatus=false" ng-transclude conteneditable="{{editableStatus}}" ng-class="{editable: editableStatus}"></div>
+<div ng-class="{content: contentStatus}">
+    <div ng-transclude contenteditable="{{editingStatus}}" ng-class="{editing: editingStatus}"></div>
     <div class="controls">
-        <button ng-click="editableStatus=true" ng-show="!editableStatus">Edit</button>
-        <button ng-click="editableStatus=false" ng-show="editableStatus">Save</button>
+        <button ng-click="toggleEdit()">{{buttonText}}</button>
     </div>
 </div>
